@@ -1,0 +1,46 @@
+Now we will convert the above code to be runbymultiple processes for speed up.
+ 1. Writeahandlerfunction that will do the following (reuse the code from previous example)
+ a. Collect the main page of SummerOlympics Wikipedia for this task, the page is here:
+ https://en.wikipedia.org/wiki/Summer_Olympic_Games . Note that you might need to use headers for fetching this page.
+
+ b. NowcreateadatabaseCreate aSQLite database named ‘OlympicsData.db’ and a
+ table named ‘SummerOlympics’ with the following columns:
+   Name(e.g. “2012 SummerOlympics”, in title of wikipedia pages)
+   WikipediaURL
+   Year (the year when its conducted)
+   HostCity (the city where its hosted)
+   ParticipatingNations (List of the participating nations)
+   Athletes (number of athletes)
+   Sports (list of sports)
+   Rank_1_nation
+   Rank_2_nation
+   Rank_3_nation
+   DONE_OR_NOT_DONE(a1or0variablesignifying whether fetched or not respectively)
+
+  c.
+ Parse the html from step 1 and extract the individual summer olympics wiki page
+ urls for TEN olympics from the last 50 years, i.e., from 1968 to 2020.
+
+ d. insert the WikipediaURL for each row and set DONE_OR_NOT_DONEas0forall.
+ 
+
+2. Nowthehandlercodewillspawnthreeprocesses using os.system call. Example of this call
+ import os
+ os.system(“python3 scraper.py&”)
+ This will run “python3 scraper.py” in a separate process.
+ 
+
+3. Thisiswhatscraper.py will do
+ a. Itwill check the database for rows where DONE_OR_NOT_DONEflag is 0.
+ b. Itwill pick a row whereDONE_OR_NOT_DONEis0(ifnosuchrow,scraper.py will exit).
+ c. For the rowchosen, scraper.py will first set the DONE_OR_NOT_DONE to 1.
+ d. Thenitwill fetch the wikipedia page using URL in the WikipediaURL column
+ e. NextusingbeautifulSoup it will parse the page and populate the columns mentioned in step 1.b. corresponding row in the database
+ 
+
+4. Writeachecker.py code that can check the database and
+ a. Reportif all the database rows are populated, i.e., there is no DONE_OR_NOT_DONE which is set to 0 and noprocess is working (figure out how do you check that?)
+ b. Ifall database rows are populated, then print answers to the following:
+   i. What are the years you choose?
+   ii. Which country was within top 3 for the maximum time in your database?
+   iii.What is the average number of athletes?
