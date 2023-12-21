@@ -1,0 +1,180 @@
+FINAL CONCLUSION BASED ON O/P MENTIONED LATER
+
+AVG EXECUTION TIME ON PARLLEL : 17.64345113436381ms 	//Based on 3 instance
+AVG EXECUTION TIME ON SEQUENTIAL : 27.70028559366862ms	////Based on 3 instance
+
+PERCENTAGE SPEEDUP: (SEQUENTIAL-PARLLEL)*100/SEQUENTIAL
+SPEEDUP =  (27.70028559366862ms-17.64345113436381ms)*100/ 27.70028559366862ms
+SPEEDUP = 36.305887263499814%
+
+
+
+
+---------------------------------PARLLEL EXECUTION---------------------------
+----------------
+TEST-1
+----------------
+Time : 15.71514344215393ms
+Chosen Years
+1960
+1976
+1980
+1984
+1988
+1996
+2000
+2004
+2008
+2016
+1972
+1964
+1992
+1968
+
+Country that was within top 3 for the maximum time in the database?
+['United States']
+
+Average No. Of Athletes
+6881.3
+
+----------------
+TEST-2
+----------------
+Time : 19.27315402030945ms
+Chosen Years
+1960
+1964
+1968
+1972
+1984
+1992
+1996
+2000
+2008
+2016
+1976
+1980
+1988
+2004
+
+Country that was within top 3 for the maximum time in the database?
+['United States']
+
+Average No. Of Athletes
+6496.65
+----------------
+TEST-3
+----------------
+Time : 17.94205594062805ms
+Chosen Years
+1960
+1964
+1968
+1980
+1984
+1992
+1996
+2000
+2008
+2016
+1972
+2004
+1976
+1988
+
+Country that was within top 3 for the maximum time in the database?
+['United States']
+
+Average No. Of Athletes
+6179.6
+
+_______________________________________
+CONCLUSION : 
+AVG EXECUTION TIME IN PARLLEL = (15.71514344215393 ms+19.27315402030945ms+17.94205594062805ms)/3
+AVG EXECUTION TIME IN PARLLEL = 17.64345113436381ms
+
+
+
+-----------------------------SEQUENTIAL EXECUTION-------------------------------
+----------------
+TEST-1
+----------------
+Time : 27.610918045043945ms
+Chosen Years
+1960
+1964
+1968
+1972
+1980
+1984
+1976
+1988
+1992
+1996
+2000
+2004
+2016
+
+Country that was within top 3 for the maximum time in the database?
+['United States']
+
+Average No. Of Athletes
+6184.05
+
+----------------
+TEST-2
+----------------
+Time : 27.744969367980957ms
+Chosen Years
+1964
+1968
+1972
+1976
+1980
+1984
+1988
+2004
+2008
+2016
+1960
+1992
+1996
+
+Country that was within top 3 for the maximum time in the database?
+['United States']
+
+Average No. Of Athletes
+5650.55
+
+----------------
+TEST-3
+----------------
+Time : 27.744969367980957ms
+Chosen Years
+1964
+1968
+1972
+1976
+1980
+1984
+1988
+2004
+2008
+2016
+1960
+1992
+1996
+
+Country that was within top 3 for the maximum time in the database?
+['United States']
+
+Average No. Of Athletes
+5650.55
+
+_______________________________________
+CONCLUSION : 
+AVG EXECUTION TIME IN SEQUENTIAL = (27.610918045043945ms+27.744969367980957ms+27.744969367980957ms)/3
+AVG EXECUTION TIME IN SEQUENTIAL = 27.70028559366862ms
+
+
+
